@@ -50,9 +50,10 @@ define letsencrypt::certonly (
   validate_array($environment)
   validate_bool($manage_cron)
 
-  $plugincmd = "-a ${plugin}"
   if 'manual' == $plugin {
     $plugincmd = ''
+  } else {
+    $plugincmd = "-a ${plugin}"
   }
 
   $command_start = "${letsencrypt_command} --agree-tos certonly ${plugincmd} "

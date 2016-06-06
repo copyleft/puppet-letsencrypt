@@ -105,6 +105,18 @@ letsencrypt::certonly { 'foo':
 }
 ```
 
+## Old ruby, old apache
+
+If apache is 2.2 (can't use apache plugin) and ruby is as old as 1.8 (can't use webroot via this module) one can use plugin "cli" and supply webroot args via additional_args:
+
+```puppet
+letsencrypt::certonly { 'foo':                                                                                                                                 
+  domains         => ['foo.example.com'],
+  plugin          => 'cli',
+  additional_args => ['--webroot --webroot-path /var/www -d foo.example.com'];
+}
+```
+
 ## Development
 
 1. Fork it

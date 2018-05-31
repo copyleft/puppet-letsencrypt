@@ -8,8 +8,8 @@ class letsencrypt::params {
   $config_file         = '/etc/letsencrypt/cli.ini'
   $path                = '/opt/letsencrypt'
   $venv_path           = '/opt/letsencrypt/.venv' # virtualenv path for vcs-installed letsencrypt
-  $repo                = 'https://github.com/letsencrypt/letsencrypt.git'
-  $version             = 'v0.4.2'
+  $repo                = 'https://github.com/certbot/certbot.git'
+  $version             = 'v0.16.0'
   $config              = {
     'server' => 'https://acme-v01.api.letsencrypt.org/directory',
   }

@@ -9,9 +9,9 @@ class letsencrypt::params {
   $path                = '/opt/letsencrypt'
   $venv_path           = '/opt/letsencrypt/.venv' # virtualenv path for vcs-installed letsencrypt
   $repo                = 'https://github.com/certbot/certbot.git'
-  $version             = 'v0.16.0'
+  $version             = 'v0.31.0'
   $config              = {
-    'server' => 'https://acme-v01.api.letsencrypt.org/directory',
+    'server' => 'https://acme-v02.api.letsencrypt.org/directory',
   }
 
   if $::operatingsystem == 'Debian' and versioncmp($::operatingsystemrelease, '9') >= 0 {
